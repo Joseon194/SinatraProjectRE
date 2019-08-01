@@ -1,19 +1,19 @@
 class CarsController < ApplicationController
 
-    get '/cars/index' do
+    get '/cars/root' do
         user = Helpers.current_user(session)
         if user.nil?
             redirect to '/signin'
         else
             @cars = Car.all
-            erb :'/cars/index'
+            erb :'/cars/root'
         end
     end
 
     get '/cars/new' do
         user = Helpers.current_user(session)
         if user.nil?
-            redirect to '/login'
+            redirect to '/signin'
         else
             erb :'/cars/create_car'
         end
@@ -35,7 +35,7 @@ class CarsController < ApplicationController
     get '/cars/show' do
         user = Helpers.current_user(session)
         if user.nil?
-            redirect to '/login'
+            redirect to '/signin'
         else
             @cars = user.cars.all
             erb :'/cars/show_cars'
@@ -53,7 +53,7 @@ class CarsController < ApplicationController
 
     get '/cars/:id/edit' do
         if !Helpers.is_signed_in?(session)
-            redirect to '/login'
+            redirect to '/signin'
         end
         @car = Car.find_by_id(params[:id])
         if @car.user == Helpers.current_user(session)
@@ -78,7 +78,7 @@ class CarsController < ApplicationController
 
     delete '/cars/:id/delete' do
         if !Helpers.is_signed_in?(session)
-            redirect to '/login'
+            redirect to '/signin'
         end
         @car = Car.find_by_id(params[:id])
         if @car.user == Helpers.current_user(session)

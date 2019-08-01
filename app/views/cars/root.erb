@@ -1,17 +1,16 @@
 <h1>Welcome, <%= Helpers.current_user(session).username%>!</h1>
 <br>
+</br>
 <h3><a href="/home">Back to homepage.</a></h3>
 <br>
-<h2>Here are all the cars submitted by you!</h2>
-<%counter = 1%>
-<% @cars.each do |car|%>
-    <h3> <%= car.user.username %>:</h3>
+</br>
+<h2>Here are all the vehicles submitted by other members!</h2>
+<hr>
+<% @rocks.each do |rock|%>
+    <h3> <%= rock.user.username %>:</h3>
     <h4>Name: <%= car.name %> </h4>
     <h4>Color: <%= car.color %> </h4>
     <h4>Model Year: <%= car.model_year %> </h4>
     <h4>Company: <%= car.company %> </h4>
-    <h4><a href="/cars/<%=car.id%>">Edit or delete this vehicle.</a></h4>
-  <%counter += 1%>
-
-    <%end%>
 <hr>
+<%end%>
