@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       post '/signin' do
           user = User.find_by(username: params[:username])
           if user && user.authenticate(params[:password])
-              session[:user_id] = user.email
+              session[:user_id] = user.id
               redirect to '/home'
           else
               redirect to '/signin'
