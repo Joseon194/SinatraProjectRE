@@ -1,0 +1,23 @@
+<h1>Welcome, <%= Helpers.current_user(session).username%>!</h1>
+<br>
+<br>
+<h2>Submit a new car!</h2>
+    <form action="/cars/new" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="car[name]" id="name">
+        <label for="color">Color:</label>
+        <input type="text" name="car[color]" id="description" rows="5" cols="30"></textarea>
+        <label for="location">Model Year:</label>
+        <input type="text" name="car[model_year]" id="model_year">
+        <label for="company">Company:</label>
+        <input type="text" name="car[company]" id="company">
+        <br>
+        <br>
+        <input type="submit" name="submit" value="submit" id="submit">
+    </form>
+<br>
+<br>
+<h4>Note: You must fill out all fields in order to submit a new specimen.</h4>
+<br>
+<br>
+<h3><a href="/home">Back to homepage.

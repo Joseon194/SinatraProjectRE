@@ -1,0 +1,28 @@
+<h1>Edit your car</h1>
+
+<form action="/cars/<%= @cars.id %>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+
+    <label>Name:</label>
+    <br><br>
+    <input type="text" name="car[name]" id="name" value="<%=@car.name%>">
+    <br><br> >
+    <label>Current Color:</label>
+    <br><br>
+    <input type="text" name="car[color]" id="color" value= "<%=@car.color%>">
+    <br><br>
+    <label>Current Model Year:</label>
+    <br><br>
+    <input type="text" name="car[model_year]" id="model_year" value="<%=@car.model_year%>">
+    <br><br>
+    <label>Company:</label>
+    <br><br>
+    <input type="text" name="car[company]" id="company" value="<%=@car.company%>">
+    <br><br>
+    <input type="submit" value="submit" id="submit">
+<br>
+<br>
+    <h4>Note: You must fill out all fields in order to edit your car.</h4>
+</form>
+<br><br>
+<h3><a href="/home">Back to homepage.</a></h3>
