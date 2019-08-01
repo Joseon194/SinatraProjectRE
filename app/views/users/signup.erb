@@ -2,8 +2,7 @@
 
 <h3>Please use your email address and password to sign up!</h3>
 
-<%= "Please include your email and password!" if @user && @user.errors.any? %>
-<form action= "/signin" method="post">
+<form action= "/signup" method="post">
   <br>
   <p>
   <input type="text" name="username" placeholder="Username:">
