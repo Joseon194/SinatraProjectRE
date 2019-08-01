@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Welcome, <%= Helpers.current_user(session).username%>!</h1>
+
+
+    <div class="content">
+      <h2>Please choose from the following:</h2>
+
+      <h3><a href="/cars/new">Submit a new car!</a></h3>
+      <br><br>
+      <h3><a href="/cars/show">View your cars!</a></h3>
+      <br><br>
+      <h3><a href="/cars/index">View all of the cars of other members!</a></h3>
+    </div>
+    <br><br>
+
+    <form action="/signout" method="post">
+    <h2>Have fun in our gallery!</h2>
+    <input type="submit", name="logout" value="Sign Out">
+    </form>
+
+
+  </div>
+</div>
