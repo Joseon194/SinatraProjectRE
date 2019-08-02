@@ -44,7 +44,7 @@ class CarsController < ApplicationController
 
     get '/cars/:id' do
         if Helpers.is_signed_in?(session)
-            @cars = Car.find_by_id(params[:id])
+            @car = Car.find_by_id(params[:id])
             erb :'/cars/edit_or_delete'
         else
             redirect to '/signin'
